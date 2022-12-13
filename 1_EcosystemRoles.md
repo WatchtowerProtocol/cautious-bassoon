@@ -1,9 +1,13 @@
 # 🧑‍🤝‍🧑 Actors and Roles
 
 In this section we define the ecosystem actors (the term stakeholder is used interchangeably) and the roles they take on, in the Dora data science tournaments and by extension in the broader Watchtower ecosystem.
+</br>
+</br>
 
 ![Actor-Roles-Relationships](img/actor-role-relationship.png)
 
+</br>
+</br>
 
 # Actors
 There are three main actors for this version of Dora's data science tournaments. These are:
@@ -44,7 +48,7 @@ The Bid Agent mechanism actions:
 * Stake and unstake WTR token
 * Claim Tournament Rewards
 
-Example
+#### Example
 A data scientist can upload and submit their risk model then can (if they choose to) stake any WTR tokens they have and submit a confidence score between 1 and 10.
 
 ## Role 2: The Consumer Agent (User)
