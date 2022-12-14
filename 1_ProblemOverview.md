@@ -23,6 +23,9 @@ A new approach is proposed where space debris scientists' communicate their calc
 
 The core problem that results in dilution (and spacecraft state estimation) is our flawed models of actual astrodynamics and our flawed models of actual sensor observations and methods of statistical inference to solve them [^5]. This creates a data quality problem. This data quality problem we argue _**is not just**_ _a scientific and statistical one but also a social one too_ created by norms such as intellectual property and national security [^6] that prevents actors in the ecosystem to share & come to consensus on the data to maintain a high quality data set [^7]. A similar problem when tackling the climate crisis. Watchtower is a _computational social system_ designed to accommodate for the current norms while working towards solving the true problem of space debris and the crowding of orbits.
 
+</br>
+
+
 [^1]: (2013). Conjunction Data Message. Recommendation for Space Data Systems Standards CCSDS 508.0B-1 Blue Book. The Consultative Committee for Space Data Systems.
 
 [^2]: (2020). NASA Spacecraft Conjunction Assessment and Collision Avoidance Best Practices Handbook. National Aeronautics and Space Administration
