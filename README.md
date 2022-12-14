@@ -15,7 +15,6 @@ We discuss the economic (token) engineering associated with building Watchtower'
 <br>
 
 ## Implementation Partners
----
 
 This project is a collaboration of mutual interest between the [Metasolis Labs](https://metasolis.co/), and [WatchtowerDAO](https://watchtower.world/). 
 
@@ -30,6 +29,6 @@ Motivations:
 <br>
 
 ## Contact
----
+
 The above model was designed and developed by [Metasolis Labs](https://metasolis.co) commissioned by WatchtowerDAO. If you are interested in using the model, supporting further development or have any other questions, reach out to us.
 
