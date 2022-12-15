@@ -12,7 +12,7 @@ We discuss the economic (token) engineering associated with building Watchtower'
 4. The Engineering Requirements 
 5. The Mathematical Specification for the System's Design
 
-<br>
+
 
 ## Implementation Partners
 
@@ -26,7 +26,6 @@ Motivations:
 
 ![implementation-partners-logos](img/partners-banner.png)
 
-<br>
 
 ## Contact
 
