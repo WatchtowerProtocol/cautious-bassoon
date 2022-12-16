@@ -1,6 +1,6 @@
 # 🧑‍🤝‍🧑 Actors and Roles
 
-In this section we define the ecosystem actors (the term stakeholder is used interchangeably) and the roles they take on, in the Dora data science tournaments and by extension in the broader Watchtower ecosystem.
+In this section we define the ecosystem actors (the term stakeholder(s) is used interchangeably with actor(s)) and the roles they take on, in the Dora data science tournaments and by extension in the broader Watchtower ecosystem.
 </br>
 </br>
 
