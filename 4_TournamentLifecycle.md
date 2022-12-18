@@ -4,22 +4,33 @@ In this section we define the interactions occuring in the tournament and the ov
 
 </br>
 
-# Creation State
-The creation state represents the creation of the tournament/auction. This is an auctions contract for a specific tournament and is typically performed programmatically by a Factory contract. The creation of an auction sets initial parameters for the auction such as auction end time (Time of Closest Approach). This is primarily conducted by the Auctions Owner which in this instance is the Watchtower Foundation with the eventual transition to the DAO. 
+# Auction Creation
+The creation state represents the creation of the tournament/auction. This is an auctions contract for a specific tournament and is typically performed programmatically by a Factory contract. The creation of an auction sets initial parameters for the auction such as auction end time (Time of Closest Approach). The main role responsible is the Auctions Owner which in this instance is the WatchtowerDAO. 
 
 On top of creating the auction contract, the public keys of all data scientists registered for the tournament are included as a security measure to ensure only those registered for the auction can participate.
 
 ## Transitions into Creation State
+There are no transitions into Creation as this is the first state.
 
 ## State Inputs
+There are no inputs that effect this state.
 
 ## State Outputs
+There are outputs created in this state mentioned below:
+* An Auction Start Time
+* An Auction End Time
+* A Risk (Pc) Threshold
+* A Token Supply to Mint for the Auction
+* A Maximum Reserve Ratio for the Bonding Curve
+* A Minimum Reserve Ratio for the Bonding Curve
+* An Auction Fee
 
 ## Transition out of Creation State
+At the end of this state, a new auction contract is created (deployed) by the Factory contract. The contract will include state variables for the tournament which have been listed in the Outputs subsection above.
 
 </br>
 
-# Initialisation State
+# Auction Initialisation
 
 ## Transitions into Initialisation State
 
@@ -31,7 +42,7 @@ On top of creating the auction contract, the public keys of all data scientists 
 
 </br>
 
-# Execution State
+# Auction Execution
 
 ## Transitions into Execution State
 
@@ -43,7 +54,7 @@ On top of creating the auction contract, the public keys of all data scientists 
 
 </br>
 
-# Settlement State
+# Auction Settlement
 
 ## Transitions into Settlement State
 
