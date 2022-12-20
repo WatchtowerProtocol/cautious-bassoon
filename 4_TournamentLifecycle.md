@@ -92,7 +92,8 @@ On an event trigger that indicates the initialisation of the Auction, a separate
 * The prize pool tokens are minted
 
 ## State Outputs
-* The staked-to-confidence ratio is recorded.
+* The staked-to-confidence (s/c) ratio is recorded.
+* The rewards distribution is calculated based on the s/c ratio.
 * The Risk (Pc) Score is updated.
 * The Risk (Pc) Threshold is updated.
 * The Reserve Ratio is set updated.
@@ -108,12 +109,25 @@ The state variables are all updated and set for the settlement of the Auction/To
 <p>Description: At auction settlement, all staked tokens are released and if the data scientist wins the auction/tournament, part of the prize pool is distributed on top of their released token via a claim function. Prizes are distributed based on a staking-to-confidence score ratio established by the data scientist during the Auction. The risk score (Pc) and threshold are finalised in this settlement state which is subsequently published on a public conjunctions dashboard for spacecraft operators, insurance companies, etc.</p>
 
 ## Transitions into Settlement State
+On an event trigger that indicates the conclusion of the Auction, a separate event trigger indicating Auction closeout is emitted. At this stage, 
+* The rewards distribution is calculated based on the s/c ratio.
+* The risk (Pc) score is updated.
+* The risk threshold is updated.
 
 ## State Inputs
+* The updated Risk (Pc) Score.
+* The updated Risk (Pc) Threshold.
+* The computed rewards distribution.
 
 ## State Outputs
+* The settled Risk (Pc) Score.
+* The settled Risk (Pc) Threshold.
+* The rewards payments distributed.
 
 ## Transition out of Settlement State
+The state variables are all updated and the Auction is settled, the contract is shelved. An events call is emitted to indicate the auctions has been settled. Additionally,
+* The settled risk (Pc) score is updated on the conjunction dashboard for the owner/operators.
+* The settled risk threshold is updated on the conjunction dashboard for the owner/operators.
 
 </br>
 
