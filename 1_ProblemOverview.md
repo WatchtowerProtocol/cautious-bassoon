@@ -15,6 +15,8 @@ The work around for such correlated errors is establishing a Pc threshold by the
 
 These threshold values tend to be $10^{-4}$ per conjunction event. This means a remediation/avoidance actions are established when the likelihood of a collision is greater than 1 in 10,000. More conservative O/O's opt for $10^{-5}$ or 1 in 100,000 [^2].
 
+> A Conjunction Event in the case of spacecraft collision is a future event (at least a week in advance) where the likelihood of one or more (secondary(s)) space objects come within proximity of a protected (primary) space craft/asset [^2].
+
 At the European Space Agency's (ESA) Space Debris Office (SDO) for example, a _**time series**_ of CDMs covering one week is released _**for each unique close approach**_, with about 3 CDMs becoming available per day. For a given close approach the last obtained CDM, including the computed risk, _can be assumed_ to be the _**best knowledge**_ they have about the potential collision and the state of the two objects in question. For this reason, ESA missions, especially in LEO use thresholds ranging between $10^{-5}$ and $10^{-4}$ [^3]. 
 
 A new approach is proposed where space debris scientists' communicate their calculated Pc models' veracity. Scientists compete in a competition by staking a crypto-token, Watchtower (WTR), on their Pc predictions. The auction mechanism for resolving these stakes will reward predictions of Pc agreed upon. Via Dora, scientists can now be able to express confidence in their models' live performance. This skin-in-the-game expressions of confidence aid in evoking a more robust calculated Pc for a screened conjunction event thereby making dilution effects economically irrational [^4].
