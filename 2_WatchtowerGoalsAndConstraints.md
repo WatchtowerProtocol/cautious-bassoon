@@ -21,7 +21,7 @@ Watchtower will perform its mandate by ensuring it meets the following goals:
 
 The system under consideration for Watchtower in this engineering model and analysis is at the tournament (or) auction subsystem level. Each conjunction event has its own tournament (or) auction. 
 
-The level above and below the auction subsystem is related to conjunction event detection and collision avoidance manuevers, respectively. Both of which will not be considered in this model and analysis. It is assumed, the conjunction event is screened and resolved for conjunction risk assessment. 
+The level above and below the auction subsystem is related to conjunction event detection and collision avoidance manoeuvres, respectively. Both of which will not be considered in this model and analysis. It is assumed, the conjunction event is screened and resolved for conjunction risk assessment. 
 
-The system boundary encapsulates the auction subsystem. The only information required from conjunction detection is a known conjunction event to establish the Time of Closest Approach (TCA) which sets the auction's end time.
+The system boundary encapsulates the auction subsystem. The only information required from conjunction detection is a screened conjunction event to establish the Time of Closest Approach (TCA) which sets the auction's end time. Data going out of the system boundary includes the risk score (Pc) and the threshold, both updated on the conjunctions dashboard for owner/operators to use for a collision avoidance manoeuvre.
 
