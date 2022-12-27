@@ -3,7 +3,7 @@
 In this section we define the goals and constraints associated with Watchtower and we define the system and its boundary for the engineering model and analysis.
 
 
-#### Watchtower's mandate is to mitigate the space debris problem and the crowding of orbits in a democratic manner and ensuring censorship resistance. 
+#### Watchtower's mandate is to mitigate the space debris problem and the crowding of orbits in a manner that is agnostic whilst ensuring censorship resistance. 
 
 ## Goals
 Watchtower will perform its mandate by ensuring it meets the following goals:

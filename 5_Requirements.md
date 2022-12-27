@@ -1,19 +1,16 @@
-# ♻️ Tournament Lifecycle
+# 🗒️ Requirements
 
-In this section we define the interactions occuring in the tournament and the overall state transitions/changes occuring during the lifecycle of the Dora data science tournaments (the term auction(s) is used interchangeably with tournament(s)) and by extension in the broader Watchtower ecosystem. 
+In this section the requirements are detailed for the defined system in the engineering model. Requirements for system variables, associated mechanisms, actors' admissible actions, initial and settlement conditions.
 
 </br>
 
-# Auction Creation
-<p>Summary: Creates a tournament/auction.</p>
-<p>Responsibility: Auction Owner (i.e. WatchtowerDAO/Foundation)</p>
-<p>Description: The creation process is typically performed programmatically by a Factory contract. The creation of an auction involves creating an auctions contract with the necessary state variables for the auction such as auction end time (Time of Closest Approach [TCA]). In addition to this, the public keys of all data scientists registered for the tournament are included as a security measure to ensure only those registered for the auction can participate. 
+# System Requirements
 
-> Please note that the states of Auction Creation and Initialisation can happen concurrently at the smart contract abstraction level.
+#### Requirement 1
 
-## Transitions into Creation State
-There are no transitions into Creation as this is the first state. At this stage, 
-* The conjunction event is known and established to determine the TCA.
+#### Requirement 2
+
+
 
 ## State Inputs
 There are no inputs that effect this state.
