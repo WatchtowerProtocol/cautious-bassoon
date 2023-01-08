@@ -1,4 +1,4 @@
-# 🗒️ Requirements
+# 🗒️ Engineering Definitions & Requirements
 
 In this section the requirements are detailed for the defined system in the engineering model. Requirements for system variables, associated mechanisms, actors' admissible actions, initial and settlement conditions.
 
@@ -23,9 +23,10 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 * System State
 * Timestep
+The timestep is the block time of the settlement layer. The block time is the time taken to create a block containing a list of transactions. These transactions are a result of agent actions
 * Token Reserve
 * Token Supply
-* Probability of Collision (Pc)
+* Risk Score/Probability of Collision (Pc)
 * Tournament End Time
 * Reserve Ratio
 * Token Price
@@ -35,7 +36,7 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 * Stake-to-Bid
 * Burn-to-Withdraw
-* Claim
+* Claim-to-Settle
 
 ## Initial Conditions
 
@@ -49,7 +50,12 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 # Actor/Agent Actions
 
-* Bidding Agent
+## Bidding Agent
+Bidding agents shall be able to execute the Stake-to-Bid, Burn-to-Withdraw and Claim-to-Settle mechanisms are per tournament mechanics.
+
+#### Operational Requirement 1
+Bidding agents shall be able to call the stake, burn and claim actions.
+
 * Auction Moderator Agent
 * Auction Outcomes Agent
 
