@@ -5,7 +5,6 @@ In this section the requirements are detailed for the defined system in the engi
 </br>
 
 # System Requirements
-
 #### Requirement 1
 The economic mechanisms associated with the tournaments shall only incentivise behaviours that achieve the system's mandate and goals.
 
@@ -51,12 +50,15 @@ The timestep is the block time of the settlement layer. The block time is the ti
 # Actor/Agent Actions
 
 ## Bidding Agent
-Bidding agents shall be able to execute the Stake-to-Bid, Burn-to-Withdraw and Claim-to-Settle mechanisms are per tournament mechanics.
+The Data Scientist taken on the role as Bidding agents and are provided with admissible actions to execute inside mechanisms of the tournament.
 
 #### Operational Requirement 1
 Bidding agents shall be able to call the stake, burn and claim actions.
 
-* Auction Moderator Agent
+#### Operational Requirement 2
+Bidding agents shall only be able to execute Stake-to-Bid, Burn-to-Withdraw and Claim-to-Settle mechanisms.
+
+## Auction Moderator Agent
 * Auction Outcomes Agent
 
 
