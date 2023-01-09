@@ -49,8 +49,10 @@ The timestep is the block time of the settlement layer. The block time is the ti
 
 # Actor/Agent Actions
 
+[^1]
+
 ## Bidding Agent
-The Data Scientist taken on the role as Bidding agents and are provided with admissible actions to execute inside mechanisms of the tournament.
+The Data Scientists take on the role as Bidding agents and are provided with admissible actions to execute mechanisms inside the tournament.
 
 #### Operational Requirement 1
 Bidding agents shall be able to call the stake, burn and claim actions.
@@ -59,10 +61,31 @@ Bidding agents shall be able to call the stake, burn and claim actions.
 Bidding agents shall only be able to execute Stake-to-Bid, Burn-to-Withdraw and Claim-to-Settle mechanisms.
 
 ## Auction Moderator Agent
-* Auction Outcomes Agent
+The Dora smart contract takes on the role as the Auction/Tournament Moderator Agent and is programmed to administer the auction/tourament for each conjunction event. It is also the owner of the auction throughout the tournament until settlement.
+
+#### Operational Requirement 3
+The moderator agent shall create, initialise and settle the auction/tournament for an individual conjunction event.
+
+#### Operational Requirement 4
+The moderator agent shall determine and mint the prize pool and subsequent token supply, respectively, for the tournament bonding curve.
+
+#### Operational Requirement 5
+The moderator agent shall broadcast the final risk score and threshold to be updated on the conjunctions dashboard at settlement.
+
+
+## Auction Outcomes Agent
+The Dora smart contract takes on the role as the Auction/Tournament Outcomes Agent and is programmed to determine, distribute and settle the outcome of auction/tourament for each conjunction event.
+
+#### Operational Requirement 6
+The outcomes agent shall determine the rewards to be distributed for the auction/tournament.
+
+#### Operational Requirement 7
+The outcomes agent shall distribute the rewards to the auction/tourament winners and burn any stakes of the losers.
 
 
 
 </br>
 
 > _**Please Note** that algorithmic dispute resolution has not been modelled into this iteration of the marketplace. For the current version, settlement is rather a simple stake-weighted aggregation of risk and the subsequent threshold. Programmatic dispute resolution requirements and definitions will be added with the inclusion of the data oracle (Laika) to transition tournaments more real-time._
+
+[^1]: Zargham, M., Shorish, J., & Paruch, K. (2019). From Curved Bonding to Configuration Spaces. (Working Paper Series / Institute for Cryptoeconomics / Interdisciplinary Research).
