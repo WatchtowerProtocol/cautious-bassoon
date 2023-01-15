@@ -4,6 +4,22 @@ In this section the requirements are detailed for the defined system in the engi
 
 </br>
 
+# Definitions
+
+| Name | Description | Symbolic Representation | 
+| :--- | :--- | :---: | 
+| State Space | Collection of Auction states at any point during the Auction lifecycle | $X$ |
+| State | Configuration of the Auction at a given point in time where $x\;\epsilon\;X$ | $x$ | 
+| Address | An index of shared state that represents actions taken by an agent where $a\;\epsilon\;A$ | $a$ | 
+| Set of Addresses | A set of addresses for a given set of agents | $A$ |
+| Local state space | A subset of the state space $X$ where an agent has influence as represented by their address ($X_a\,\subseteq\,X$)| $X_a$ |
+| Action | Represents a permissible action by an agent that may influence the state of the system | $u_a$ |
+| Set of Feasible Actions | A set of feasible action for an agent in their local state space $X_a$ where, $u_a\:\epsilon\:U$| $U$ |
+| Mechanism | A mapping of either individual or a set of states and addresses where  | $F$ |
+
+
+</br>
+
 # System Requirements
 #### Requirement 1
 The economic mechanisms associated with the tournaments shall only incentivise behaviours that achieve the system's mandate and goals.
