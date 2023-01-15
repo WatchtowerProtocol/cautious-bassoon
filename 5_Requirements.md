@@ -4,18 +4,20 @@ In this section the requirements are detailed for the defined system in the engi
 
 </br>
 
+<a name="abcd"></a> 
+
 # Definitions
 
-| Name | Description | Symbolic Representation | 
-| :--- | :--- | :---: | 
-| State Space | Collection of Auction states at any point during the Auction lifecycle | $X$ |
-| State | Configuration of the Auction at a given point in time where $x\;\epsilon\;X$ | $x$ | 
-| Address | An index of shared state that represents actions taken by an agent where $a\;\epsilon\;A$ | $a$ | 
-| Set of Addresses | A set of addresses for a given set of agents | $A$ |
-| Local state space | A subset of the state space $X$ where an agent has influence as represented by their address ($X_a\,\subseteq\,X$)| $X_a$ |
-| Action | Represents a permissible action by an agent that may influence the state of the system | $u_a$ |
-| Set of Feasible Actions | A set of feasible action for an agent in their local state space $X_a$ where, $u_a\:\epsilon\:U$| $U$ |
-| Mechanism | A mapping of either individual or a set of states and addresses where  | $F$ |
+| # | Name | Description | Symbolic Representation | 
+| :--- | :--- | :--- | :---: | 
+| 1. | State Space | Collection of Auction states at any point during the Auction lifecycle | $X$ |
+| 2. | State | Configuration of the Auction at a given point in time where $x\;\epsilon\;X$ | $x$ | 
+| 3. | Address | An index of shared state that represents actions taken by an agent where $a\;\epsilon\;A$ | $a$ | 
+| 4. | Set of Addresses | A set of addresses for a given set of agents | $A$ |
+| 5. | Local state space | A subset of the state space $X$ where an agent has influence as represented by their address ($X_a\,\subseteq\,X$)| $X_a$ |
+| 6. | Action | Represents a permissible action by an agent that may influence the state of the system | $u_a$ |
+| 7. | Set of Feasible Actions | A set of feasible action for an agent in their local state space $X_a$ where, $u_a\:\epsilon\:U$| $U$ |
+| 8. | Mechanism | A mapping of either individual or a set of states and addresses where  | $F$ |
 
 
 </br>
@@ -64,8 +66,7 @@ The timestep is the block time of the settlement layer. The block time is the ti
 
 
 # Actor/Agent Actions
-
-[^1]
+Agents are defined as per [definition](#abcd) 6
 
 ## Bidding Agent
 The Data Scientists take on the role as Bidding agents and are provided with admissible actions to execute mechanisms inside the tournament.
