@@ -1,6 +1,6 @@
 # 🗒️ Engineering Definitions & Requirements
 
-In this section the requirements are detailed for the defined system in the engineering model. Requirements for system variables, associated mechanisms, actors' admissible actions, initial and settlement conditions.
+In this section definitions and requirements are detailed for the system. Requirements for system variables, associated mechanisms, actors' admissible actions, initial and settlement conditions.
 
 </br>
 <a name="defs"></a> 
@@ -14,12 +14,18 @@ In this section the requirements are detailed for the defined system in the engi
 | 3. | Address | An index of shared state that represents actions taken by an agent where $a\;\epsilon\;A$ | $a$ | 
 | 4. | Set of Addresses | A set of addresses for a given set of agents | $A$ |
 | 5. | Local state space | A subset of the state space $X$ where an agent has influence as represented by their address ($X_a\,\subseteq\,X$)| $X_a$ |
-| 6. | Action | Represents a permissible action by an agent that may influence the state of the system | $u_a$ |
+| 6. | Action | Represents a admissible action by an agent that may influence the state of the system | $u_a$ |
 | 7. | Set of Feasible Actions | A set of feasible action for an agent in their local state space $X_a$ where, $u_a\:\epsilon\:U$| $U$ |
 | 8. | Mechanism | A mapping of either individual or a set of states and addresses where  | $F$ |
 | 9. | Time Step | A time step is defined as one block  | $t$ |
 | 10. | Auction Time Period | The entire time period for a tournament defined by the Time to Closest Approach (TCA) where $t\:\epsilon\:T$ | $T$ |
-
+| 11. | Reserve | The total WTR bonded to the bonding curve contract where $R_t$ is the reserve at time $t$ during the tournament.  | $R$ |
+| 12. | Supply | The total WTR supplied for a tournament issued by the bonding curve where $S_t$ is the supply at time $t$ during the tournament.  | $S$ |
+| 13. | Price | The estimate of the value of WTR token where $P_t$ is the price at time $t$ during the tournament. | $P$ |
+| 14. | Risk Score | This state variable is the estimate of the probability of collision ($P_c$) of the conjunction event where $P_c\,\epsilon\,[0,1]$ and when $P_c=0$, it indicates no collision while $P_c=1$ indicates the highest likelihood of collision. | $P_c$ |
+| 15. | Reserve Ratio | This is the ratio of the reserve over the localised market cap. ($P * S$ ) or $\phi = R/(P*S)$  | $\phi$ |
+| 16. | Risk Threshold | This is the minimum risk score required to determine whether a collision avoidance manoeuvre is necessary or not.  | $P_{c(threshold)}$ |
+| 17. | Auction Time Threshold | This is the maximum allowable time required for the tournament to exist.  | $T_{(threshold)}$ |
 
 </br>
 
@@ -67,7 +73,7 @@ The timestep is the block time of the settlement layer. The block time is the ti
 
 
 # Actor/Agent Actions
-Agents are defined as per [definition 6](#defs) where they are represented by an address $a$ taking a permissible actions $u$ at a time step $t$. An agent can carry out a set of permissible actions over the entire tournament time period $T$ represented by a list of transactions (a set of addresses, $A$).
+Agents are defined as per [definition 6](#defs) where they are represented by an address $a$ taking a admissible actions $u$ at a time step $t$. An agent can carry out a set of admissible actions over the entire tournament time period $T$ represented by a list of transactions (a set of addresses, $A$).
 
 ## Bidding Agent
 The Data Scientists take on the role as Bidding agents and are provided with admissible actions to execute mechanisms inside the tournament.
