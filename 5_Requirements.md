@@ -2,8 +2,8 @@
 
 In this section definitions and requirements are detailed for the system. Requirements for system variables, associated mechanisms, actors' admissible actions, initial and settlement conditions.
 
-</br>
-<a name="defs"></a> 
+<!-- </br>
+<a name="defs"></a>  -->
 
 # Definitions
 
@@ -107,7 +107,7 @@ All variables at initialisation and settlement are conditioned upon the system's
 ## Mechanisms
 There are three main mechanisms associated with the tournament where the former two are associated with the bonding curve during the tournament and the latter last at the conclusion of it.
 
-$ \digamma \coloneqq \{ f_{stake}, f_{burn}, f_{claim}  \} $
+$$ \digamma \coloneqq \{ f_{stake}, f_{burn}, f_{claim}  \} $$
 
 ### Stake-to-Bid
 The stake-to-bid mechanism deposits a certain number of WTR as designated by the bidding agent (data scientist) into the staking escrow contract. 
@@ -126,10 +126,24 @@ The stake-to-bid mechanism deposits a certain number of WTR as designated by the
 #### Requirement 7
 
 ## Initial Conditions
-The Auction/Tournament Time Threshold and Risk Threshold
 
-* Must set Tournament End Time Threshold to TCA
+### Tournament Time Threshold
+The Auction/Tournament Time Threshold needs to be set prior to a state transition into the Creation, Initialisation and eventual commencement of the Auction/Tournament. This is based on the Time of Closest Approach and a margin of 2 days are defined above.
 
+$$
+T_{(threshold)} = T - 2 days
+$$
+
+### Risk Threshold
+The Risk Threshold isn't as important at initialisation for a state transition but is defaulted to zero. As per guidance[^2], a conservative threshold is a $P_c > 10^{-5}$ or 1 in 10,000. Thresholds generally range between $ 10^{-4} > P_c > 10^{-5} \: $. The threshold for the tournament is initialised to zero and is determined during the course of the tournament but set to the range defined.
+
+
+$$
+P_{c(threshold)} = 0
+$$
+$$
+where \;  P_{c(threshold)} \epsilon \; [10^{-4}, 10^{-5}]
+$$
 
 ## Settlement Conditions
 
@@ -176,4 +190,6 @@ The outcomes agent shall distribute the rewards to the auction/tourament winners
 
 > _**Please Note** that algorithmic dispute resolution has not been modelled into this iteration of the marketplace. For the current version, settlement is rather a simple stake-weighted aggregation of risk and the subsequent threshold. Programmatic dispute resolution requirements and definitions will be added with the inclusion of the data oracle (Laika) to transition tournaments more real-time._
 
-[^1]: Zargham, M., Shorish, J., & Paruch, K. (2019). From Curved Bonding to Configuration Spaces. (Working Paper Series / Institute for Cryptoeconomics / Interdisciplinary Research).
+
+[^1]: (2020). NASA Spacecraft Conjunction Assessment and Collision Avoidance Best Practices Handbook. National Aeronautics and Space Administration
+<!-- [^2]: Zargham, M., Shorish, J., & Paruch, K. (2019). From Curved Bonding to Configuration Spaces. (Working Paper Series / Institute for Cryptoeconomics / Interdisciplinary Research). -->
