@@ -13,7 +13,7 @@ In this section definitions and requirements are detailed for the system. Requir
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 1. | State Space | Collection of Auction states at any point during the Auction lifecycle | $X$ |
+| 1. | State Space | Collection of states of an Auction at any point during its lifecycle | $X$ |
 | 2. | State | Configuration of the Auction at a given point in time where $x_t\;\epsilon\;X$ | $x_t$ | 
 | 3. | Address | An index of shared state that represents actions taken by an agent where $a\;\epsilon\;A$ | $a$ | 
 | 4. | Set of Addresses | A set of addresses for a given set of agents | $A$ |
@@ -77,7 +77,7 @@ In this section definitions and requirements are detailed for the system. Requir
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 17. | Mechanism | A mapping of either individual or a set of states and addresses where  | $F$ |
+| 17. | Mechanism | A mapping of either individual or a set of states and addresses where  | $\digamma$ |
 
 ## Constraints
 
@@ -105,12 +105,28 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 
 ## Mechanisms
+There are three main mechanisms associated with the tournament where the former two are associated with the bonding curve during the tournament and the latter last at the conclusion of it.
 
-* Stake-to-Bid
-* Burn-to-Withdraw
-* Claim-to-Settle
+$ \digamma \coloneqq \{ f_{stake}, f_{burn}, f_{claim}  \} $
+
+### Stake-to-Bid
+The stake-to-bid mechanism deposits a certain number of WTR as designated by the bidding agent (data scientist) into the staking escrow contract. 
+
+#### Requirement 5
+
+
+### Burn-to-Withdraw
+
+#### Requirement 6
+
+
+
+### Claim-to-Settle
+
+#### Requirement 7
 
 ## Initial Conditions
+The Auction/Tournament Time Threshold and Risk Threshold
 
 * Must set Tournament End Time Threshold to TCA
 
@@ -121,7 +137,7 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 
 # Actor/Agent Actions
-Agents are defined as per [definition 6](#defs) where they are represented by an address $a$ taking a admissible actions $u$ at a time step $t$. An agent can carry out a set of admissible actions over the entire tournament time period $T$ represented by a list of transactions (a set of addresses, $A$).
+Agents are represented by an address $a$ taking a admissible actions $u$ at a time step $t$. An agent can carry out a set of admissible actions over the entire tournament time period $T$ represented by a list of transactions (a set of addresses, $A$).
 
 ## Bidding Agent
 The Data Scientists take on the role as Bidding agents and are provided with admissible actions to execute mechanisms inside the tournament.
