@@ -135,19 +135,41 @@ T_{(threshold)} = T - 2 days
 $$
 
 ### Risk Threshold
-The Risk Threshold isn't as important at initialisation for a state transition but is defaulted to zero. As per guidance[^2], a conservative threshold is a $P_c > 10^{-5}$ or 1 in 10,000. Thresholds generally range between $ 10^{-4} > P_c > 10^{-5} \: $. The threshold for the tournament is initialised to zero and is determined during the course of the tournament but set to the range defined.
+The Risk Threshold isn't as important at initialisation for a state transition but is defaulted to zero. As per guidance[^1], a conservative threshold is a $P_c > 10^{-5}$ or 1 in 10,000. Thresholds generally range between $ 10^{-4} > P_c > 10^{-5} \: $. The threshold for the tournament is initialised to zero and is determined during the course of the tournament but set to the range defined.
 
+<br/>
 
 $$
 P_{c(threshold)} = 0
 $$
+
+<br/>
+
 $$
 where \;  P_{c(threshold)} \epsilon \; [10^{-4}, 10^{-5}]
 $$
 
 ## Settlement Conditions
 
-* Tournament End Time Threshold shall be met as a hard stop
+### Tournament Time Threshold
+For a successful settelment, the Auction/Tournament shall prohibit submissions from bidding agents 2 days prior to the auction/tournament end time (or) the Time to Closest Approach, TCA ($T$). This will be a programmatic hard stop to ensure a margin is assured for both programmatic dispute resolution (in a future version of the tournament) and time to prepare for collision avoidance manoeuvres.
+
+$$
+T_{(threshold)} < T
+$$
+
+### Risk Threshold
+For a successful settlement of the auction, the $P_{c(threshold)}$ shall be within the range guidance [^1] prior the Time to Closest Approach ($T$) and at the tournament time threshold ($T_{(threshold)}$).
+
+<br/>
+
+$$
+P_{c(threshold)} \; \epsilon \; [10^{-4}, 10^{-5}]
+$$
+
+<br/>
+
+$$ \lim_{0\to T_{\;(threshold)}}P_c  \; = \;   P_{c\;(threshold)} $$
 
 
 # Actor/Agent Actions
