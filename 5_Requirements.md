@@ -7,6 +7,12 @@ In this section definitions and requirements are detailed for the system. Requir
 
 # Definitions
 
+<!-- <br /> -->
+
+> All definitions associated with the Reserve and Reserve Ratio, while defined in this document, won't be applied to version 1. A bonding curve with a reserve ratio will be introduced in v2 to allow bidding agents to enter auctions without the need of buying Watchtower tokens. Therefore, in v2 any loss in an auction will result in an staked amount equivalent of Watchtower tokens being burned.
+
+<!-- <br /> -->
+
 ## State Variables
 
 #### System State
@@ -39,13 +45,13 @@ In this section definitions and requirements are detailed for the system. Requir
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 11. | Reserve | The total WTR bonded to the bonding curve contract where $R_t$ is the reserve at time $t$ during the tournament.  | $R$ |
+| 11. | Reserve | $R_t$ is the reserve at time $t$ during the tournament. This exists so bidding agents aren't tied to buying Watchtower tokens to participate.  | $R$ |
 
 #### Token Supply
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 12. | Supply | The total WTR supplied for a tournament issued by the bonding curve where $S_t$ is the supply at time $t$ during the tournament.  | $S$ |
+| 12. | Supply | $S_t$ is the supply at time $t$ during the tournament. | $S$ |
 
 
 #### Risk Score/Probability of Collision (Pc)
@@ -70,7 +76,7 @@ In this section definitions and requirements are detailed for the system. Requir
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 16. | Price | The estimate of the value of WTR token where $P_t$ is the price at time $t$ during the tournament. | $P$ |
+| 16. | Price | The estimate of the value of the token where $P_t$ is the price at time $t$ during the tournament. | $P$ |
 
 
 ## Mechanisms
@@ -96,7 +102,7 @@ The economic mechanisms associated with the tournaments shall only incentivise b
 All actors in the tournament shall be contrained in their action space to meet the system mandate and goals.
 
 #### Requirement 3
-The incentives associated to all admissible actions & thereby behaviours in the tournament are all contained within the bonding curve mechanism of the system as per its mandate and goals.
+The incentives associated to all admissible actions & thereby behaviours in the tournament are all contained within the mechanism of the system as per its mandate and goals.
 
 #### Requirement 4
 All variables at initialisation and settlement are conditioned upon the system's mandate and goals.
@@ -105,12 +111,12 @@ All variables at initialisation and settlement are conditioned upon the system's
 
 
 ## Mechanisms
-There are three main mechanisms associated with the tournament where the former two are associated with the bonding curve during the tournament and the latter last at the conclusion of it.
+There are three main mechanisms associated with the tournament where the former two are occur during the tournament and the latter last at the conclusion of it.
 
 $$ \digamma \coloneqq \{ f_{stake}, f_{burn}, f_{claim}  \} $$
 
 ### Stake-to-Bid
-The stake-to-bid mechanism deposits a certain number of WTR as designated by the bidding agent (data scientist) into the staking escrow contract. 
+The stake-to-bid mechanism deposits a certain number of tokens as designated by the bidding agent (data scientist) into the staking escrow contract. 
 
 #### Requirement 5
 
@@ -191,7 +197,7 @@ The Dora smart contract takes on the role as the Auction/Tournament Moderator Ag
 The moderator agent shall create, initialise and settle the auction/tournament for an individual conjunction event.
 
 #### Operational Requirement 4
-The moderator agent shall determine and mint the prize pool and subsequent token supply, respectively, for the tournament bonding curve.
+The moderator agent shall determine and mint the prize pool and subsequent token supply, respectively, for the auction tournament.
 
 #### Operational Requirement 5
 The moderator agent shall broadcast the final risk score and threshold to be updated on the conjunctions dashboard at settlement.
