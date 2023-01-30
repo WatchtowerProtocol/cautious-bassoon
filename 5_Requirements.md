@@ -116,16 +116,34 @@ There are three main mechanisms associated with the tournament where the former 
 $$ \digamma \coloneqq \{ f_{stake}, f_{burn}, f_{claim}  \} $$
 
 ### Stake-to-Bid
-The stake-to-bid mechanism deposits a certain number of tokens as designated by the bidding agent (data scientist) into the staking escrow contract. 
+The stake-to-bid mechanism adds Watchtower tokens as designated by the bidding agent (data scientist) into the auctions contract. The agent's action ($u_{a,t}$) transfers $\Delta S_t$ Watchtower tokens into the auction contract at time $t$.
+
+The System-level (perspective) state after the admissible action is performed is now:
+$$
+    S_{t+1} = S_t + \Delta S_t
+$$
+The Agent-level (perspective) state after the admissible action is performed is now:
+$$
+    s_{a,t+1} = s_t - \Delta S_t
+$$
 
 #### Requirement 5
-
+The action to stake-to-bid shall add a quantity of $\Delta S_t$ tokens at time $t$ to the auctions contract.
 
 ### Burn-to-Withdraw
+The burn-to-withdraw mechanism removes Watchtower tokens as designated by the bidding agent (data scientist) out of the auctions contract. The agent's action ($u_{a,t}$) transfers $\Delta S_t$ Watchtower tokens out of the auction contract at time $t$.
+
+The System-level (perspective) state after the admissible action is performed is now:
+$$
+    S_{t+1} = S_t - \Delta S_t
+$$
+The Agent-level (perspective) state after the admissible action is performed is now:
+$$
+    s_{a,t+1} = s_t + \Delta S_t
+$$
 
 #### Requirement 6
-
-
+The action to burn and withdraw shall remove a quantity of $\Delta S_t$ tokens at time $t$ out of the auctions contract.
 
 ### Claim-to-Settle
 
