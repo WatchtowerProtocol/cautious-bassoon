@@ -146,9 +146,10 @@ $$
 The action to burn and withdraw shall remove a quantity of $\Delta S_t$ tokens at time $t$ out of the auctions contract.
 
 ### Claim-to-Settle
-Staked tokens are locked (escrow) for a period of time $t$ after the conclusion of the auction. Claims are opened (vested) after this time period. The claims mechanism removes locked Watchtower tokens out of the auctions contract. 
+Staked tokens are locked (escrow) for a period of time $t$ after the conclusion of the auction. Claims are opened (vested) after this time period. The claims mechanism removes locked Watchtower tokens out of the auctions contract. Auction winners get their principal and winnings in Watchtower tokens while others lose their principal which is burned.
 
 #### Requirement 7
+The action to claim and settle shall remove the principal and winnings for the auction winners only from escrow.
 
 ## Initial Conditions
 
