@@ -41,56 +41,56 @@ In this section definitions and requirements are detailed for the system. Requir
 | :--- | :--- | :--- | :---: | 
 | 10. | Time Step | The timestep is the block time of the settlement layer. The block time is the time taken to create a block containing a list of transactions as a result of agents' admissible actions associated with their addresses.  | $t$ |
 
-#### Token Reserve
+<!-- #### Token Reserve
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 11. | Reserve | $R_t$ is the reserve at time $t$ during the tournament. This exists so bidding agents aren't tied to buying Watchtower tokens to participate.  | $R$ |
+| 11. | Reserve | $R_t$ is the reserve at time $t$ during the tournament. This exists so bidding agents aren't tied to buying Watchtower tokens to participate.  | $R$ | -->
 
 #### Token Supply
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 12. | Supply | $S_t$ is the supply at time $t$ during the tournament. | $S$ |
+| 11. | Supply | $S_t$ is the supply at time $t$ during the tournament. | $S$ |
 
 
 #### Risk Score/Probability of Collision (Pc)
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 13. | Risk Score | This state variable is the estimate of the probability of collision ($P_c$) of the conjunction event where $P_c\,\epsilon\,[0,1]$ and when $P_c=0$, it indicates no collision while $P_c=1$ indicates the highest likelihood of collision. | $P_c$ |
+| 12. | Risk Score | This state variable is the estimate of the probability of collision ($P_c$) of the conjunction event where $P_c\,\epsilon\,[0,1]$ and when $P_c=0$, it indicates no collision while $P_c=1$ indicates the highest likelihood of collision. | $\Xi$ |
 
 #### Tournament End Time
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 14. | Auction Time Period | The entire time period for a tournament defined by the Time to Closest Approach (TCA) where $t\:\epsilon\:T$ | $T$ |
+| 13. | Auction Time Period | The entire time period for a tournament defined by the Time to Closest Approach (TCA) where $t\:\epsilon\:T$ | $T$ |
 
-#### Reserve Ratio
+<!-- #### Reserve Ratio
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 15. | Reserve Ratio | This is the ratio of the reserve over the localised market cap. ($P * S$ ) or $\phi = R/(P*S)$  | $\phi$ |
+| 15. | Reserve Ratio | This is the ratio of the reserve over the localised market cap. ($P * S$ ) or $\phi = R/(P*S)$  | $\phi$ | -->
 
 #### Token Price
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 16. | Price | The estimate of the value of the token where $P_t$ is the price at time $t$ during the tournament. | $P$ |
+| 14. | Price | The estimate of the value of the token where $P_t$ is the price at time $t$ during the tournament. | $P$ |
 
 
 ## Mechanisms
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 17. | Mechanism | A mapping of either individual or a set of states and addresses where  | $\digamma$ |
+| 15. | Mechanism | A mapping of either individual or a set of states and addresses where  | $\digamma$ |
 
 ## Constraints
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 18. | Risk Threshold | This is the minimum risk score required to determine whether a collision avoidance manoeuvre is necessary or not.  | $P_{c(threshold)}$ |
-| 19. | Auction Time Threshold | This is the maximum allowable time required for submissions to be made where $T_{(threshold)} = T - 2 days$  | $T_{(threshold)}$ |
+| 16. | Risk Threshold | This is the minimum risk score required to determine whether a collision avoidance manoeuvre is necessary or not.  | $P_{c(threshold)}$ |
+| 17. | Auction Time Threshold | This is the maximum allowable time required for submissions to be made where $T_{(threshold)} = T - 2 days$  | $T_{(threshold)}$ |
 
 </br>
 
