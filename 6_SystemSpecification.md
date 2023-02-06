@@ -21,7 +21,7 @@ The legend below is short form description for this page.
 
 
 ## System Specification
-## State Variables
+### State Variables
 
 All system state variables for the simulation are outlined below and have been defined in the Engineering [Requirements](5_Requirements.md) Section.
 
@@ -31,7 +31,7 @@ All system state variables for the simulation are outlined below and have been d
 * Claim on auction settlement ($\Omicron$)
 
 
-## Parameters
+### Parameters
 
 The total token supply $S$ and total payout at auction settlement $\Omicron$ are the same but rather used based on the time period throughout the auction tournament. They both represent the prize pool.
 
@@ -44,4 +44,31 @@ $$
 $$
 
 The prize pool is known to all bidding agents prior, throughout and the end of the auction. It is an invariant.
+
+### Outcome
+
+## States
+We describe the mathematical equations associated at system-level and agent-level for different states of the tournament lifecyle.
+
+### Auction Creation
+
+
+### Auction Initialisation
+
+
+### Auction Execution
+
+
+### Auction Settlement
+
+## Mechanisms
+We describe the mathematical equations associated with the mechanisms that exist throughout the entirety of the tournament lifecycle.
+
+### Stake-to-Bid
+
+
+### Burn-to-Withdraw
+
+
+### Claim-to-Settle
 
