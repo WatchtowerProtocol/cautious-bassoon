@@ -25,8 +25,6 @@ There are outputs created in this state mentioned below:
 * A Risk (Pc) Score (a value between 0 and 1)
 * A Risk (Pc) Threshold (a boolean)
 * A Token Supply to Mint for the Auction
-* A Maximum Reserve Ratio for the Bonding Curve
-* A Minimum Reserve Ratio for the Bonding Curve
 * An Auction Fee
 
 ## Transition out of Creation State

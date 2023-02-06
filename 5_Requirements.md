@@ -89,7 +89,7 @@ In this section definitions and requirements are detailed for the system. Requir
 
 | # | Name | Description | Symbolic Representation | 
 | :--- | :--- | :--- | :---: | 
-| 16. | Risk Threshold | This is the minimum risk score required to determine whether a collision avoidance manoeuvre is necessary or not.  | $P_{c(threshold)}$ |
+| 16. | Risk Threshold | This is the minimum risk score required to determine whether a collision avoidance manoeuvre is necessary or not.  | $\Xi_{threshold}$ |
 | 17. | Auction Time Threshold | This is the maximum allowable time required for submissions to be made where $T_{(threshold)} = T - 2 days$  | $T_{(threshold)}$ |
 
 </br>

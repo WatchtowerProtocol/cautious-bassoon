@@ -18,6 +18,7 @@ The legend below is short form description for this page.
 | $\omicron_{win}$ | An agent's claims on payouts conditioned on a win |
 | $\omicron_{loss}$ | An agent's claims on payouts conditioned on a loss |
 | $\Omicron$ | Total payout at Auction Settlement (Prize Pool)|
+| $\psi$ | The fee associated with running the auction tournament charged by WatchtowerDAO |
 
 
 ## System Specification
@@ -28,7 +29,11 @@ All system state variables for the simulation are outlined below and have been d
 * Supply ($S$)
 * Price ($P$)
 * Probability of Collision, $P_c\;$ ($\Xi$)
+* Probability of Collision Threshold, $P_{c(threshold)}\;$ ($\Xi_{threshold}$)
 * Claim on auction settlement ($\Omicron$)
+* Auction Fee charged by WatchtowerDAO ($\psi$)
+* Auction Threshold time. ($T_{threshold}$)
+* Auction End time. ($T$)
 
 
 ### Parameters
@@ -45,12 +50,19 @@ $$
 
 The prize pool is known to all bidding agents prior, throughout and the end of the auction. It is an invariant.
 
-### Outcome
-
 ## States
 We describe the mathematical equations associated at system-level and agent-level for different states of the tournament lifecyle.
 
 ### Auction Creation
+
+| State Equation | At auction creation... |
+| :---: | :--- | 
+| $\; S = Prize\;Pool \;$ | the prize pool is the total supply of tokens for the tournament. |
+| $T = TCA$ |  the Time of Closest Approach (TCA) is confirmed and set at the length of the entire tournament inclusive of settlement. |
+| $T_{threshold}\; =\; T\; -\; 2\; days\;$ |  the threshold time for the tournament is set to $2\;days$ before settlement. |
+| $\Xi = 0 $ |  the system's approximation of the likelihood of a collision risk is set to zero. |
+| $\Xi_{threshold} = false$ |  the threshold of the system's approximation of the likelihood of a collision (which is $10^{-5}$) is set to false. |
+| $\psi = 0.00698$ |  the auction fee is set to $0.698\,\%$ of the final settlement payout which can be changed any time via DAO governance. |
 
 
 ### Auction Initialisation
