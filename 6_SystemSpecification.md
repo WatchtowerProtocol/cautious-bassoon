@@ -12,7 +12,8 @@ The legend below is short form description for this page.
 | :---: | :--- | 
 | $S$ | Total token Supply (Prize Pool) |
 | $s$ | Agent token Supply |
-| $\tau$ | An agent's private belief of the likelihood of a collision |
+| $\tau$ | An agent's private belief of the likelihood of a collision represented as the amount of tokens staked to bid on their model's performance. |
+| $\Phi$ | Total Staked pool of tokens by bidding agents |
 | $\Xi$ | The system's approximation of the likelihood of a collision |
 | $P$ | Token price |
 | $\omicron_{win}$ | An agent's claims on payouts conditioned on a win |
@@ -55,23 +56,48 @@ We describe the mathematical equations associated at system-level and agent-leve
 
 ### Auction Creation
 
+The auction creation and initialisation states can be prone to occurring at the same time. At this state, a factory contract creates a new auction contract with a predetermined prize pool which is the total supply of tokens minted for the tournament. Other variables are also set, shown in the equations below.
+
 | State Equation | At auction creation... |
 | :---: | :--- | 
 | $\; S = Prize\;Pool \;$ | the prize pool is the total supply of tokens for the tournament. |
 | $T = TCA$ |  the Time of Closest Approach (TCA) is confirmed and set at the length of the entire tournament inclusive of settlement. |
-| $T_{threshold}\; =\; T\; -\; 2\; days\;$ |  the threshold time for the tournament is set to $2\;days$ before settlement. |
 | $\Xi = 0 $ |  the system's approximation of the likelihood of a collision risk is set to zero. |
-| $\Xi_{threshold} = false$ |  the threshold of the system's approximation of the likelihood of a collision (which is $10^{-5}$) is set to false. |
 | $\psi = 0.00698$ |  the auction fee is set to $0.698\,\%$ of the final settlement payout which can be changed any time via DAO governance. |
+
 
 
 ### Auction Initialisation
 
+At this state, initial conditions are set for the tournament to execute.
+
+| State Equation | At auction intialisation... |
+| :---: | :--- | 
+| **Initial Conditions**  ||
+| $\Xi_{threshold} = false$ |  the threshold of the system's approximation of the likelihood of a collision (which is $10^{-5}$) is set to false. |
+| $T_{threshold}\; =\; T\; -\; 2\; days\;$ |  the threshold time for the tournament is set to $2\;days$ before settlement. |
 
 ### Auction Execution
 
+During this state, two mechanisms are a play, the equations to both outlined under the Mechanisms subsection below. These are:
+1. Stake-to-Bid: Agents deposit their tokens into the contract to bid on their model's performance.
+2. Unstake-to-Withdraw: Agents remove full or partial amounts of their tokens from the contract as many times they wish prior to the threshold time of the tournament.
+
 
 ### Auction Settlement
+
+At this state, settlement conditions must be met in the 2 day window between threshold time and TCA.
+
+| State Equation | At auction settlement... |
+| :---: | :--- | 
+| **Settlement Conditions**  |
+| $ 10^{-4} > \Xi_{threshold} > 10^{-5} \: $ |  the threshold of the system's approximation of the likelihood of a collision (which is $10^{-5}$) is set to false. |
+| $T_{threshold}\; <\; T\; $ |  the threshold time for the tournament is set to $2\;days$ before settlement. |
+| $\Omicron\; = Prize\;Pool \;$ | Total payout at Auction Settlement (Prize Pool)|
+| $\omicron_a =  (\,\tau \div \Phi\,) \, \ast \, \Omicron   \iff \omicron_a \Rightarrow \omicron_{win} $ | An agent's claims on payouts conditioned on a win and their stake returned. |
+| $\omicron_a =  0   \iff \omicron_a \Rightarrow \omicron_{loss} $ | An agent's claims on payouts conditioned on a loss and their stake burned. |
+
+
 
 ## Mechanisms
 We describe the mathematical equations associated with the mechanisms that exist throughout the entirety of the tournament lifecycle.
@@ -79,7 +105,7 @@ We describe the mathematical equations associated with the mechanisms that exist
 ### Stake-to-Bid
 
 
-### Burn-to-Withdraw
+### Unstake-to-Withdraw
 
 
 ### Claim-to-Settle

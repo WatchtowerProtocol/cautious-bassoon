@@ -130,8 +130,8 @@ $$
 #### Requirement 5
 The action to stake-to-bid shall add a quantity of $\Delta S_t$ tokens at time $t$ to the auctions contract.
 
-### Burn-to-Withdraw
-The burn-to-withdraw mechanism removes Watchtower tokens as designated by the bidding agent (data scientist) out of the auctions contract. The agent's action ($u_{a,t}$) transfers $\Delta S_t$ Watchtower tokens out of the auction contract at time $t$.
+### Unstake-to-Withdraw
+The Unstake-to-Withdraw mechanism removes Watchtower tokens as designated by the bidding agent (data scientist) out of the auctions contract. The agent's action ($u_{a,t}$) transfers $\Delta S_t$ Watchtower tokens out of the auction contract at time $t$.
 
 The System-level (perspective) state after the admissible action is performed is now:
 $$
@@ -179,22 +179,22 @@ The action to claim and settle shall remove the principal and winnings for the a
 The Auction/Tournament Time Threshold needs to be set prior to a state transition into the Creation, Initialisation and eventual commencement of the Auction/Tournament. This is based on the Time of Closest Approach and a margin of 2 days are defined above.
 
 $$
-T_{(threshold)} = T - 2 days
+T_{threshold} = T - 2 days
 $$
 
 ### Risk Threshold
-The Risk Threshold isn't as important at initialisation for a state transition but is defaulted to zero. As per guidance[^1], a conservative threshold is a $P_c > 10^{-5}$ or 1 in 10,000. Thresholds generally range between $ 10^{-4} > P_c > 10^{-5} \: $. The threshold for the tournament is initialised to zero and is determined during the course of the tournament but set to the range defined.
+The Risk Threshold isn't as important at initialisation for a state transition but is defaulted to zero. As per guidance[^1], a conservative threshold is a $\Xi > 10^{-5}$ or 1 in 10,000. Thresholds generally range between $ 10^{-4} > \Xi > 10^{-5} \: $. The threshold for the tournament is initialised to zero and is determined during the course of the tournament but set to the range defined.
 
 <br/>
 
 $$
-P_{c(threshold)} = 0
+\Xi_{threshold} = false
 $$
 
 <br/>
 
 $$
-where \;  P_{c(threshold)} \epsilon \; [10^{-4}, 10^{-5}]
+where \;\;  \Xi_{threshold} \;\; \epsilon \;\; [10^{-4}, 10^{-5}]
 $$
 
 ## Settlement Conditions
@@ -203,21 +203,21 @@ $$
 For a successful settelment, the Auction/Tournament shall prohibit submissions from bidding agents 2 days prior to the auction/tournament end time (or) the Time to Closest Approach, TCA ($T$). This will be a programmatic hard stop to ensure a margin is assured for both programmatic dispute resolution (in a future version of the tournament) and time to prepare for collision avoidance manoeuvres.
 
 $$
-T_{(threshold)} < T
+T_{threshold} < T
 $$
 
 ### Risk Threshold
-For a successful settlement of the auction, the $P_{c(threshold)}$ shall be within the range guidance [^1] prior the Time to Closest Approach ($T$) and at the tournament time threshold ($T_{(threshold)}$).
+For a successful settlement of the auction, the $\Xi_{threshold}$ shall be within the range guidance [^1] prior the Time to Closest Approach ($\,T\,$) and at the tournament time threshold ($\;T_{threshold}\;$).
 
 <br/>
 
 $$
-P_{c(threshold)} \; \epsilon \; [10^{-4}, 10^{-5}]
+\Xi_{threshold} \; \epsilon \; [10^{-4}, 10^{-5}]
 $$
 
 <br/>
 
-$$ \lim_{0\to T_{\;(threshold)}}P_c  \; = \;   P_{c\;(threshold)} $$
+$$ \lim_{0\to T_{\;threshold}}\Xi  \; = \;   \Xi_{threshold} $$
 
 
 # Actor/Agent Actions
@@ -230,7 +230,7 @@ The Data Scientists take on the role as Bidding agents and are provided with adm
 Bidding agents shall be able to call the stake, burn and claim actions.
 
 #### Operational Requirement 2
-Bidding agents shall only be able to execute Stake-to-Bid, Burn-to-Withdraw and Claim-to-Settle mechanisms.
+Bidding agents shall only be able to execute Stake-to-Bid, Unstake-to-Withdraw and Claim-to-Settle mechanisms.
 
 ## Auction Moderator Agent
 The Dora smart contract takes on the role as the Auction/Tournament Moderator Agent and is programmed to administer the auction/tourament for each conjunction event. It is also the owner of the auction throughout the tournament until settlement.
