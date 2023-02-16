@@ -12,7 +12,7 @@ The legend below is short form description for this page.
 | :---: | :--- | 
 | $S$ | Total token Supply (Prize Pool) |
 | $s$ | Agent token Supply |
-| $\tau$ | An agent's private belief of the likelihood of a collision represented as the amount of tokens staked to bid on their model's performance. |
+| $\xi$ | An agent's private belief of the likelihood of a collision represented as the amount of tokens staked to bid on their model's performance. |
 | $\Phi$ | Total Staked pool of tokens by bidding agents |
 | $\Xi$ | The system's approximation of the likelihood of a collision |
 | $P$ | Token price |
@@ -94,8 +94,8 @@ At this state, settlement conditions must be met in the 2 day window between thr
 | $ 10^{-4} > \Xi_{threshold} > 10^{-5} \: $ |  the threshold of the system's approximation of the likelihood of a collision (which is $10^{-5}$) is set to false. |
 | $T_{threshold}\; <\; T\; $ |  the threshold time for the tournament is set to $2\;days$ before settlement. |
 | $\Omicron\; = Prize\;Pool \;$ | Total payout at Auction Settlement (Prize Pool)|
-| $\omicron_a =  (\,\tau \div \Phi\,) \, \ast \, \Omicron   \iff \omicron_a \Rightarrow \omicron_{win} $ | An agent's claims on payouts conditioned on a win and their stake returned. |
-| $\omicron_a =  0   \iff \omicron_a \Rightarrow \omicron_{loss} $ | An agent's claims on payouts conditioned on a loss and their stake burned. |
+| $\omicron_a =  (\, \Omicron \ast \frac{\xi}{\Phi} \,) + \xi \,    \iff \omicron_a \Rightarrow \omicron_{win} $ | An agent's claims on payouts conditioned on a win and their stake returned ($+\xi$). |
+| $\omicron_a =  0 + (-\xi) \iff \omicron_a \Rightarrow \omicron_{loss} $ | An agent's claims on payouts conditioned on a loss and their stake burned ($-\xi$). |
 
 
 
@@ -104,9 +104,40 @@ We describe the mathematical equations associated with the mechanisms that exist
 
 ### Stake-to-Bid
 
+The system $P_c$ currently *will not update* during the auction execution phase
+
+| State | Equation |
+| :---: | :--- | 
+| **System-Level** |  |
+| System Supply | $S_{t+1} = S_t + \Delta S_t$ |
+| System $P_c$ | $\Xi_{t+1} = \Xi_{t}$  |
+| **Agent-Level** |  |
+| Agent Supply | $s_{t+1} = s_t - \Delta S_t$ |
+| Agent $P_c$ belief | $\xi_{t+1} = \Epsilon\,[\,{\xi_{t}\mid (c_{t}, \Omicron)\,]}  $ |
+
+An agent's expected belief of $P_c$ is based on their private belief during the auction ($\xi_t$) conditioned upon confidence in their own modeling during the auction execution phase ($c_t$) and the prize pool value ($\Omicron$).
 
 ### Unstake-to-Withdraw
+
+The system $P_c$ *only updates* during the auction settlement phase.
+
+| State | Equation |
+| :---: | :--- | 
+| **System-Level** |  |
+| System Supply | $S_{t+1} = S_t - \Delta S_t$ |
+| System $P_c$ | $\Xi_{t+1} = \Xi_{t}$  |
+| **Agent-Level** |  |
+| Agent Supply | $s_{t+1} = s_t + \Delta S_t$ |
+| Agent $P_c$ belief | $\xi_{t+1} = \Epsilon\,[\,{\xi_{t}\mid (c_{t}, \Omicron)\,]}  $ |
 
 
 ### Claim-to-Settle
 
+| State | Equation |
+| :---: | :--- | 
+| **System-Level** |  |
+| System Supply | |
+| System $P_c$ |  |
+| **Agent-Level** |  |
+| Agent Supply | |
+| Agent $P_c$ belief | |
