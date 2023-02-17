@@ -132,12 +132,14 @@ The system $P_c$ *only updates* during the auction settlement phase.
 
 
 ### Claim-to-Settle
+When agents stake their tokens, they are making a bet on their ability to model collision risk accurately. As such, they submit their model, which provides their private belief of $P_c$ ($\,\xi\,$) and the performance of their model which is evaluated using the $logloss$ parameter that is a decent measure for binary classification problems.
 
 | State | Equation |
 | :---: | :--- | 
 | **System-Level** |  |
-| System Supply | |
-| System $P_c$ |  |
+| System Payout | $\Omicron = \Omicron_{win} + \Omicron_{loss}$ |
+| System $P_c$ | $\Xi \in \R ,\,\,  10^{-4} > \Xi > 10^{-5} $ |
+| System $logloss$ | $\Alpha \in \R ,\:\,  -\ln(0.5) < \Alpha <-\ln(0.5) $ |
 | **Agent-Level** |  |
 | Agent Supply | |
 | Agent $P_c$ belief | |
