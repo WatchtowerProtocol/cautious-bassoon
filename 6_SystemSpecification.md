@@ -42,11 +42,11 @@ All system state variables for the simulation are outlined below and have been d
 The total token supply $S$ and total payout at auction settlement $\Omicron$ are the same but rather used based on the time period throughout the auction tournament. They both represent the prize pool.
 
 $$
-    Prize\;Pool = S \;\;\;\;\;\;\;\; for \;\; t \;\epsilon \; [0, \; T_{threshold}] 
+    Prize\;Pool = S \;\;\;\;\;\;\;\; for \;\; t \;\in \; [0, \; T_{threshold}] 
 $$
 
 $$
-    Prize\;Pool = \Omicron \;\;\;\;\;\;\;\; for \;\; t \;\epsilon \; [T_{threshold}, \; T] 
+    Prize\;Pool = \Omicron \;\;\;\;\;\;\;\; for \;\; t \;\in \; [T_{threshold}, \; T] 
 $$
 
 The prize pool is known to all bidding agents prior, throughout and the end of the auction. It is an invariant.
@@ -143,3 +143,21 @@ When agents stake their tokens, they are making a bet on their ability to model 
 | **Agent-Level** |  |
 | Agent Supply | |
 | Agent $P_c$ belief | |
+
+
+## Invariants
+The invariant for this version of the auction market is the prize pool. The prize pool is determined at auction contract creation and initialised prior to the execution state. This is represented by two variables based on the time period of the tournament. 
+* From the creation of the auction through to the end of the execution state, the prize pool is represented by the total token supply (or) $S$.
+
+$$
+    Prize\;Pool = S \;\;\;\;\;\;\;\; for \;\; t \;\in \; [0, \; T_{threshold}] 
+$$
+
+* From the end of the execution state to the end of claim and settlement state, the prize pool is represented by the total payout (or) $\Omicron$.
+
+$$
+    Prize\;Pool = \Omicron \;\;\;\;\;\;\;\; for \;\; t \;\in \; [T_{threshold}, \; T] 
+$$
+
+## Collision Risk Updates
+
