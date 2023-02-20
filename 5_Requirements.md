@@ -150,13 +150,13 @@ Staked tokens are locked (escrow) for a period of time $t$ after the conclusion 
 
 <br />
 
-The System-level (perspective) state after auction conclusion:
+The System-level (perspective) state after auction conclusion
 
 $$
     S_{T_{(threshold)}} = S_{T_{(threshold)}} - \Delta S_{T_{(threshold)}}
 $$
 
-The Agent-level (perspective) state after auction conclusion:
+The Agent-level (perspective) state after auction conclusion
 
 $$
     s_{(a,T_{(threshold)})} = s_{T_{(threshold)}} + \Delta S_{T_{(threshold)}}
@@ -164,13 +164,13 @@ $$
 
 <br />
 
-The System-level (perspective) state after auction settlement:
+The System-level (perspective) state after auction settlement
 
 $$
     S_{T} = S_T - \Delta S_T
 $$
 
-The Agent-level (perspective) state after auction settlement:
+The Agent-level (perspective) state after auction settlement
 
 $$
     s_{a,T} = s_T + \Delta S_T
