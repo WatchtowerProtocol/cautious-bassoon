@@ -141,8 +141,9 @@ When agents stake their tokens, they are making a bet on their ability to model 
 | System $P_c$ | $\Xi \in \R ,\,\,  10^{-4} > \Xi > 10^{-5} $ |
 | System $logloss$ | $\Alpha \in \R ,\:\,  -\ln(0.5) < \Alpha <-\ln(0.5) $ |
 | **Agent-Level** |  |
-| Agent Supply | |
-| Agent $P_c$ belief | |
+| Agent Payout | $\omicron = (\omicron_{win}\:,\:\omicron_{loss}\:)$ |
+| Agent $P_c$ | $\xi \in \R ,\,\,  10^{-4} > \Xi > 10^{-5} $ |
+| Agent $logloss$ | $\alpha \in \R ,\:\,  -\ln(0.5) < \Alpha <-\ln(0.5) $ |
 
 
 ## Invariants
