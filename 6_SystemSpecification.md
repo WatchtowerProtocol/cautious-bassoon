@@ -161,3 +161,12 @@ $$
 
 ## Collision Risk Updates
 
+The update to the $P_c$ score for this current version is simply based on a majority rule where in a sample size of bidding agents ($a_i$) participating in a auctions tournament, if most agents align their model's performances to a particular $P_c$ score, then the system-level $P_c$ score is a reflection of this behaviour. While not perfect, it will suffice for running the proof of concept tournament. When permission-less entries are allowed, this would be considered a potential attack vector as well and would need to be reconsidered.
+
+Bidding agent's stake weights are not used to determine the system-level $P_c$ as this is a potential attack vector to game the competition and introduce errors.
+
+$$
+
+\Xi = max(\:\xi(a_1), \:\xi(a_2), \:...,\: \xi(a_n)\:)
+
+$$
