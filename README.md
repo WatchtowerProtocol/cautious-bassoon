@@ -16,11 +16,11 @@ We discuss the economic (token) engineering associated with building Watchtower'
 
 ## Implementation Partners
 
-This project is a collaboration of mutual interest between the [Metasolis Labs](https://metasolis.co/), and [WatchtowerDAO](https://watchtower.world/). 
+This project is a collaboration of mutual interest between the [Metasolis Labs](https://metasolis.co/), and [Watchtower Foundation](https://watchtower.world/). 
 
 Motivations:
 * **Metasolis Labs:** a s.t.e.a.m studio with a focus on building open-source web3 infrastructure for space ecosystems using rigorous design processes and tools.
-* **WatchtowerDAO:** the foundation that enables the governance of Watchtower.
+* **Watchtower Foundation:** the foundation that enables the governance of Watchtower.
 
 <br>
 
@@ -29,5 +29,5 @@ Motivations:
 
 ## Contact
 
-The above model was designed and developed by [Metasolis Labs](https://metasolis.co) commissioned by WatchtowerDAO. If you are interested in using the model, supporting further development or have any other questions, reach out to us.
+The above model was designed and developed by [Metasolis Labs](https://metasolis.co) commissioned by Watchtower Foundation. If you are interested in using the model, supporting further development or have any other questions, reach out to us.
 
